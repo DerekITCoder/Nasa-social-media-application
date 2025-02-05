@@ -36,4 +36,13 @@ public class UserController {
     public UserProfile createUser(@RequestBody UserProfile userProfile) {
         return repository.save(userProfile);
     }
+
+    @GetMapping("/users/home")
+    public String handleUserHome() {
+      return "home_users";
+    }
+
+
+
+
 }
