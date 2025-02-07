@@ -12,13 +12,13 @@ public class UserProfile {
     @GeneratedValue
     private Integer id;
 
-    private String userName;
+    private String username;
 
     private String userPassword;
 
-    public UserProfile(Integer id, String userName, String userPassword) {
+    public UserProfile(Integer id, String username, String userPassword) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.userPassword = userPassword;
     }
 
@@ -34,12 +34,13 @@ public class UserProfile {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getUserPassword() {
@@ -52,9 +53,10 @@ public class UserProfile {
 
     @Override
     public String toString() {
-        return "UserProfile [id=" + id + ", userName=" + userName + ", userPassword=" + userPassword + "]";
+        return "UserProfile [id=" + id + ", username=" + username + ", userPassword=" + userPassword + "]";
     }
 
+  
 
     
 }

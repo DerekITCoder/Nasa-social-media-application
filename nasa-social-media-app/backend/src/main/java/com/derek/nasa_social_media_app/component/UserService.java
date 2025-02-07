@@ -10,18 +10,27 @@ import com.derek.nasa_social_media_app.model.UserProfile;
 @Component
 public class UserService {
     
-    private List<UserProfile> users = new ArrayList<>();
+    private static List<UserProfile> users = new ArrayList<>();
     
     
     
     
     private int usersCount = 0;
     
-    public UserProfile save(UserProfile userProfile) {
+    public UserProfile saveUserProfile(UserProfile userProfile) {
 		userProfile.setId(++usersCount);
 		users.add(userProfile);
 		return userProfile;
 	}
+
+
+	static {
+
+		users.add(new UserProfile(1,"derek","red"));
+
+}
+
+
 
 
 }
