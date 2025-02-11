@@ -1,7 +1,10 @@
 package com.derek.nasa_social_media_app.controller;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,10 +17,12 @@ import com.derek.nasa_social_media_app.repository.UserProfileRepository;
 @RestController
 public class UserController {
     
-
+    @Autowired
     private UserProfileRepository repository;
 
     private UserService service;
+
+
 
 
     public UserController(UserProfileRepository repository,UserService service) {
@@ -43,6 +48,23 @@ public class UserController {
     }
 
 
+
+
+    // @GetMapping("/names")
+    // public void getAllNames() {
+    //     service.getNames();
+    // } 
+
+    @GetMapping("/names")
+    public List<String> findAllOnlyNames() {
+    List<UserProfile> users = (List<UserProfile>) repository.findAll();
+    return users.stream()
+            .map(UserProfile::getUsername)
+            .collect(Collectors.toList());
+}
+    
+    
+    
 
 
 }
