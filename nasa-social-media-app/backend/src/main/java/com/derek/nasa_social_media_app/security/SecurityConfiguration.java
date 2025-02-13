@@ -32,7 +32,7 @@ private UserProfileService userProfileService;
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(registry -> {
-                registry.requestMatchers("/home","/register/**")
+                registry.requestMatchers("/home","/names","/register/**")
                 .permitAll();
                 registry.anyRequest().authenticated();
 
