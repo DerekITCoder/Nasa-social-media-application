@@ -42,12 +42,15 @@ public class UserController {
         return repository.save(userProfile);
     }
 
-    @GetMapping("/users/home")
+    @GetMapping("/home")
     public String handleUserHome() {
       return "home_users";
     }
 
-
+    @PostMapping("/register")
+    public UserProfile newUser(@RequestBody UserProfile userProfile) {
+        return repository.save(userProfile);
+    }
 
 
     // @GetMapping("/names")
