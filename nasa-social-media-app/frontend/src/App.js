@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import NasaApi from './components/NasaApi';
+// import './start_page.html';
 
 function App() {
   return (
