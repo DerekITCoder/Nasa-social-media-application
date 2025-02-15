@@ -1,13 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import NasaApi from './components/NasaApi';
-// import './start_page.html';
+import { useState } from 'react';
+import MakePost from './components/MakePost';
+import ShowPosts from './components/ShowPosts';
+import NewApp from './components/NewApp.css';
 
 function App() {
+  const [post, setPost] = useState('');
+  const [postList, setPostList] = useState([]);
+
   return (
     <div className="App">
-  
+   
     <NasaApi />
+    <ShowPosts setPost={setPost} />
+    <MakePost post={post} />
 
 
     </div>
