@@ -15,17 +15,6 @@ public class UserPosts {
 @GeneratedValue
 private Integer id;
 
-private String userProfileName;
-
-
-public String getUserProfileName() {
-    return userProfileName;
-}
-
-public void setUserProfileName(String userProfileName) {
-    this.userProfileName = userProfileName;
-}
-
 private String text;
 
 @ManyToOne(fetch = FetchType.LAZY)
@@ -58,8 +47,7 @@ public void setUserProfiles(UserProfile userProfiles) {
 
 @Override
 public String toString() {
-    return "UserPosts [id=" + id + ", userProfileName=" + userProfileName + ", text=" + text + ", userProfiles="
-            + userProfiles + "]";
+    return "UserPosts [id=" + id + ", text=" + text + ", userProfiles=" + userProfiles + "]";
 }
 
 

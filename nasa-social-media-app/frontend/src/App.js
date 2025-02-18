@@ -5,6 +5,7 @@ import { useState } from 'react';
 import MakePost from './components/MakePost';
 import ShowPosts from './components/ShowPosts';
 import NewApp from './components/NewApp.css';
+import MakeComment from './components/MakeComment';
 
 function App() {
   const [post, setPost] = useState('');
@@ -15,12 +16,14 @@ function App() {
    
     <NasaApi />
     <ShowPosts setPost={setPost} />
-    <MakePost post={post} />
+    {/* <MakePost post={post} /> */}
+    <MakeComment />
 
 
     </div>
   );
 }
+
 
 
 // function App() {
