@@ -36,9 +36,15 @@ private UserProfileService userProfileService;
                 .permitAll();
                 registry.anyRequest().authenticated();
 
+            }).formLogin(httpSecurityFormLoginConfigurer -> {
+                httpSecurityFormLoginConfigurer
+                        .loginPage("/login")
+                        .permitAll();
             })
-            .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
             .build();
+
+            // .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
+            // .build();
                 
 }
 
