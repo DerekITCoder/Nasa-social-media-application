@@ -39,6 +39,7 @@ private UserProfileService userProfileService;
             }).formLogin(httpSecurityFormLoginConfigurer -> {
                 httpSecurityFormLoginConfigurer
                         .loginPage("/login")
+                        .successHandler(new SuccessHandler())
                         .permitAll();
             })
             .build();
