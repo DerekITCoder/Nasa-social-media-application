@@ -6,6 +6,7 @@ import MakePost from './components/MakePost';
 import ShowPosts from './components/ShowPosts';
 import NewApp from './components/NewApp.css';
 import MakeComment from './components/MakeComment';
+import CreateUser from './components/CreateUser';
 
 function App() {
   const [post, setPost] = useState('');
@@ -15,9 +16,10 @@ function App() {
     <div className="App">
    
     <NasaApi />
-    <ShowPosts setPost={setPost} />
+    {/* <ShowPosts setPost={setPost} /> */}
     {/* <MakePost post={post} /> */}
     <MakeComment />
+    <CreateUser />
 
 
     </div>
