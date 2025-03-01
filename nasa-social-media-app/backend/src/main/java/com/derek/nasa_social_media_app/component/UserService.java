@@ -33,4 +33,11 @@ public class UserService {
 
 
 
+public void getNames(){
+users.forEach(p -> System.out.println(p.getUsername()));
+
+}
+
+
+
 }
