@@ -1,18 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
 import NasaApi from './components/NasaApi';
-// import './start_page.html';
+import { useState } from 'react';
+import MakePost from './components/MakePost';
+import ShowPosts from './components/ShowPosts';
+import NewApp from './components/NewApp.css';
+import MakeComment from './components/MakeComment';
+import CreateUser from './components/CreateUser';
 
 function App() {
+  const [post, setPost] = useState('');
+  const [postList, setPostList] = useState([]);
+
   return (
     <div className="App">
-  
+
+    <CreateUser />
     <NasaApi />
+    {/* <ShowPosts setPost={setPost} /> */}
+    {/* <MakePost post={post} /> */}
+    <MakeComment />
+   
 
 
     </div>
   );
 }
+
 
 
 // function App() {

@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.derek.nasa_social_media_app.model.UserProfile;
 
-public interface UserProfileRepository extends CrudRepository<UserProfile, Long>  {
+public interface UserProfileRepository extends CrudRepository<UserProfile, Integer>  {
     
     Optional<UserProfile> findByUsername(String username);
 

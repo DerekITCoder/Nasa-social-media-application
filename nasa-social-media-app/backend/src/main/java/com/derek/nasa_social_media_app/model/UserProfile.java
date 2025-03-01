@@ -1,8 +1,13 @@
 package com.derek.nasa_social_media_app.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class UserProfile {
@@ -15,6 +20,11 @@ public class UserProfile {
     private String username;
 
     private String userPassword;
+
+
+    @OneToMany(mappedBy = "userProfiles")
+	@JsonIgnore
+	private List<UserPosts> posts;
 
     public UserProfile(Integer id, String username, String userPassword) {
         this.id = id;

@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +21,8 @@ import com.derek.nasa_social_media_app.component.UserService;
 import com.derek.nasa_social_media_app.model.UserProfile;
 import com.derek.nasa_social_media_app.repository.UserProfileRepository;
 
+
+@CrossOrigin(origins = "http://localhost:3000")
 @Controller
 public class UserController {
     
@@ -55,22 +60,6 @@ public class UserController {
     }
 
 
-
-    // @GetMapping("/names")
-    // public void getAllNames() {
-    //     service.getNames();
-    // } 
-
-    @GetMapping("/names")
-    public List<String> findAllOnlyNames() {
-    List<UserProfile> users = (List<UserProfile>) repository.findAll();
-    return users.stream()
-            .map(UserProfile::getUsername)
-            .collect(Collectors.toList());
-}
-    
-    
-    
 
 
 
