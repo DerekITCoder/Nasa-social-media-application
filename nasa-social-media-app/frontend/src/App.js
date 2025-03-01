@@ -14,12 +14,13 @@ function App() {
 
   return (
     <div className="App">
-   
+
+    <CreateUser />
     <NasaApi />
     {/* <ShowPosts setPost={setPost} /> */}
     {/* <MakePost post={post} /> */}
     <MakeComment />
-    <CreateUser />
+   
 
 
     </div>
